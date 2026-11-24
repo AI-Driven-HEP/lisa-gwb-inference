@@ -1,0 +1,12 @@
+# Core versions used for the paper. On macOS, PyPI's PyTorch wheel runs on CPU.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.14.0+cpu ; platform_system == "Linux"
+torch==2.14.0 ; platform_system != "Linux"
+numpy==2.2.6
+# The macOS 12 wheel of the same release also loads on newer macOS versions.
+scipy @ https://files.pythonhosted.org/packages/a0/6e/0c3bf90fae0e910c274db43304ebe25a6b391327f3f10b5dcc638c090795/scipy-1.15.3-cp310-cp310-macosx_12_0_arm64.whl#sha256=ad3432cb0f9ed87477a8d97f03b763fd1d57709f1bbde3c9369b1dff5503b253 ; platform_system == "Darwin" and platform_machine == "arm64" and python_version == "3.10"
+scipy==1.15.3 ; platform_system != "Darwin" or platform_machine != "arm64" or python_version != "3.10"
+matplotlib==3.10.9
+scikit-learn==1.7.2
+sbi==0.27.0
+zuko==1.6.0

@@ -1,0 +1,13 @@
+{
+  "pca_k": 32,
+  "embed_hidden": [64, 64],
+  "embed_out": 32,
+  "flow": "zuko_nsf",
+  "hidden": 64,
+  "transforms": 5,
+  "batch": 256,
+  "lr": 0.0005,
+  "patience": 20,
+  "max_epochs": 500,
+  "seed": 0
+}
