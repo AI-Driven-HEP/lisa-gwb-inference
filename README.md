@@ -23,9 +23,16 @@ The separator adapts the multi-scale, multi-headed autoencoder of
 [Einsle et al. (2025)](https://doi.org/10.1103/hs9b-drwx). It estimates noise
 and combined gravitational-wave power from 512-bin A, E and T spectra.
 
+### Generate training and validation data
+
 ```bash
 python -m lisa_gwb.separator_data --out results/stage_c_pool \
   --n-events 20000 --n-val 1024 --workers 4 --seed 20260920
+```
+
+### Train the separator
+
+```bash
 for seed in 20260922 20260923 20260924; do
   bash training/run_separator.sh --seed "$seed" --out "results/prod/seed$seed" \
     -- --patience 1000000 --allow_bad_bins
@@ -81,7 +88,6 @@ installed environment. Set `VARIANT` to choose SBI-S or SBI-R and point
 `RESULTS` at the corresponding training directory. The notebook shows posterior
 sampling on a simulated observation and accepts your own binned spectra.
 
-## Citation and license
+## License
 
-See [CITATION.cff](CITATION.cff) to cite the manuscript by Moslem Ahmadvand
-and Saeed Ansarifard. The code is released under the [MIT License](LICENSE).
+The code is released under the [MIT License](LICENSE).
